@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume JD Match Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Resume JD Match Tool</h1>
+      <p class="subtitle">Compare your resume against AI Product Manager and Global GTM roles.</p>
+    </header>
+
+    <main>
+      <section class="input-section">
+        <div class="input-group">
+          <label for="job-description">Job Description</label>
+          <textarea
+            id="job-description"
+            placeholder="Paste the job description here. Example: AI Product Manager role focused on GTM strategy, user research, localization, and cross-functional collaboration..."
+            rows="10"
+          ></textarea>
+        </div>
+
+        <div class="input-group">
+          <label for="resume">Resume / Experience</label>
+          <textarea
+            id="resume"
+            placeholder="Paste your resume or work experience here. Example: Led product roadmap for an AI feature. Conducted user research and supported go-to-market launch..."
+            rows="10"
+          ></textarea>
+        </div>
+
+        <button id="analyze-btn" type="button">Analyze Match</button>
+      </section>
+
+      <section id="results" class="results hidden" aria-live="polite">
+        <h2>Analysis Results</h2>
+
+        <div class="result-card score-card">
+          <h3>Match Score</h3>
+          <div class="score-display">
+            <span id="match-score">0</span>
+            <span class="score-label">/ 100</span>
+          </div>
+          <p id="score-summary" class="score-summary"></p>
+        </div>
+
+        <div class="result-card">
+          <h3>Missing Keywords</h3>
+          <p class="result-hint">Role-specific terms from the job description that are not yet on your resume.</p>
+          <ul id="missing-keywords" class="tag-list"></ul>
+        </div>
+
+        <div class="result-card result-card-accent">
+          <h3>Positioning Advice</h3>
+          <p class="result-hint">How to frame your background for this AI Product / Global GTM role.</p>
+          <div id="positioning-advice" class="advice-content"></div>
+        </div>
+
+        <div class="result-card">
+          <h3>Recommended Resume Bullet Points</h3>
+          <p class="result-hint">Professional bullets tailored to AI PM and GTM roles—customize with your own metrics.</p>
+          <ul id="recommended-bullets" class="bullet-list"></ul>
+        </div>
+
+        <div class="result-card result-card-skills">
+          <h3>Next Skill Gap</h3>
+          <p class="result-hint">Three skills worth building next based on this job description.</p>
+          <ul id="next-skill-gaps" class="skill-gap-list"></ul>
+        </div>
+
+        <div class="result-card">
+          <h3>Interview Questions</h3>
+          <p class="result-hint">Role-specific questions to practice before your interview.</p>
+          <ul id="interview-questions" class="question-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>This tool runs entirely in your browser. No data is sent anywhere.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
